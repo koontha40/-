@@ -1,0 +1,951 @@
+/* ========================================
+   全域樣式重置 (Global Reset)
+   ======================================== */
+* {
+    /* 通用選擇器 *：選取所有元素 */
+    margin: 0;
+    /* 移除所有元素的預設外邊距 */
+    padding: 0;
+    /* 移除所有元素的預設內邊距 */
+    box-sizing: border-box;
+    /* 設定盒模型為 border-box，讓 padding 和 border 包含在 width 內 */
+}
+
+body {
+    /* body 元素樣式：網頁的主要容器 */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* 設定字體族，使用系統預設的無襯線字體 */
+    line-height: 1.6;
+    /* 設定行高為字體大小的 1.6 倍，提升可讀性 */
+    color: #333;
+    /* 設定文字顏色為深灰色 */
+    background-color: #f8f9fa;
+    /* 設定背景顏色為淺灰色 */
+}
+
+/* ========================================
+   容器樣式 (Container Styles)
+   ======================================== */
+.container {
+    /* 通用容器樣式，用於控制內容寬度和置中 */
+    max-width: 1200px;
+    /* 設定最大寬度為 1200px */
+    margin: 0 auto;
+    /* 上下邊距為 0，左右自動（置中效果） */
+    padding: 0 20px;
+    /* 左右內邊距為 20px，避免內容貼邊 */
+}
+
+/* ========================================
+   導航選單樣式 (Navigation Styles)
+   ======================================== */
+.navbar {
+    /* 導航選單的主要容器 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 設定漸層背景，從藍色到紫色，角度 135 度 */
+    padding: 1rem 0;
+    /* 上下內邊距為 1rem（約 16px） */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /* 添加陰影效果，讓導航選單有浮起的感覺 */
+    position: sticky;
+    /* 設定為黏性定位，滾動時會固定在頂部 */
+    top: 0;
+    /* 距離頂部 0px 時開始固定 */
+    z-index: 1000;
+    /* 設定層級，確保導航選單在其他元素之上 */
+}
+
+.nav-container {
+    /* 導航選單的內容容器 */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    /* 使用 Flexbox 佈局 */
+    justify-content: space-between;
+    /* 主軸對齊：兩端對齊（logo 在左，選單在右） */
+    align-items: center;
+    /* 交叉軸對齊：垂直置中 */
+}
+
+.nav-logo {
+    /* 網站標題樣式 */
+    color: white;
+    /* 白色文字 */
+    font-size: 1.5rem;
+    /* 字體大小為 1.5rem（約 24px） */
+    font-weight: bold;
+    /* 粗體字 */
+}
+
+.nav-menu {
+    /* 導航選單列表樣式 */
+    display: flex;
+    /* 使用 Flexbox 佈局，讓選單項目水平排列 */
+    list-style: none;
+    /* 移除列表的預設樣式（圓點） */
+    gap: 2rem;
+    /* 設定選單項目之間的間距為 2rem */
+}
+
+.nav-link {
+    /* 導航連結樣式 */
+    color: white;
+    /* 白色文字 */
+    text-decoration: none;
+    /* 移除連結的底線 */
+    padding: 0.5rem 1rem;
+    /* 內邊距：上下 0.5rem，左右 1rem */
+    border-radius: 5px;
+    /* 圓角邊框，半徑 5px */
+    transition: all 0.3s ease;
+    /* 過渡動畫：所有屬性變化 0.3 秒，緩動效果 */
+    font-weight: 500;
+    /* 中等粗體 */
+}
+
+.nav-link:hover,
+.nav-link.active {
+    /* 滑鼠懸停和當前頁面的樣式 */
+    background-color: rgba(255,255,255,0.2);
+    /* 半透明白色背景 */
+    transform: translateY(-2px);
+    /* 向上移動 2px，產生浮起效果 */
+}
+
+/* ========================================
+   主要內容區域 (Main Content)
+   ======================================== */
+.main-content {
+    /* 主要內容區域樣式 */
+    min-height: calc(100vh - 140px);
+    /* 設定最小高度為視窗高度減去 140px，確保內容不會太短 */
+}
+
+/* ========================================
+   Hero 區塊樣式 (Hero Section)
+   ======================================== */
+.hero-section {
+    /* 主要展示區域樣式 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 漸層背景，與導航選單相同的配色 */
+    color: white;
+    /* 白色文字 */
+    padding: 4rem 0;
+    /* 上下內邊距為 4rem，創造充足的空間感 */
+}
+
+.hero-content {
+    /* Hero 內容的容器 */
+    display: flex;
+    /* 使用 Flexbox 佈局 */
+    align-items: center;
+    /* 垂直置中對齊 */
+    gap: 3rem;
+    /* 文字和圖片之間的間距為 3rem */
+}
+
+.hero-text h2 {
+    /* Hero 區域的主標題 */
+    font-size: 2.5rem;
+    /* 大標題字體大小 */
+    margin-bottom: 1rem;
+    /* 下邊距 1rem */
+    font-weight: 700;
+    /* 粗體字 */
+}
+
+.hero-subtitle {
+    /* Hero 區域的副標題 */
+    font-size: 1.3rem;
+    /* 副標題字體大小 */
+    margin-bottom: 1rem;
+    /* 下邊距 1rem */
+    opacity: 0.9;
+    /* 透明度 90%，創造層次感 */
+}
+
+.hero-description {
+    /* Hero 區域的描述文字 */
+    font-size: 1.1rem;
+    /* 描述文字字體大小 */
+    line-height: 1.8;
+    /* 行高 1.8，提升可讀性 */
+    opacity: 0.8;
+    /* 透明度 80%，比副標題更淡一些 */
+}
+
+.hero-image img {
+    /* Hero 區域的圖片樣式 */
+    width: 100%;
+    /* 寬度 100%，響應式設計 */
+    max-width: 300px;
+    /* 最大寬度限制為 300px */
+    border-radius: 15px;
+    /* 圓角邊框，半徑 15px */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    /* 陰影效果，讓圖片有浮起的感覺 */
+}
+
+/* 資訊區塊 */
+.info-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.info-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.info-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    border-left: 4px solid #667eea;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h4 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.info-list {
+    list-style: none;
+}
+
+.info-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.info-list li:last-child {
+    border-bottom: none;
+}
+
+.info-list strong {
+    color: #555;
+}
+
+/* 技能區塊 */
+.skills-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+}
+
+.skills-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.skill-item {
+    background: rgba(255,255,255,0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.skill-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.skill-item h4 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.skill-bar {
+    background: rgba(255,255,255,0.3);
+    height: 8px;
+    border-radius: 4px;
+    margin: 1rem 0;
+    overflow: hidden;
+}
+
+.skill-progress {
+    background: white;
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.skill-item p {
+    opacity: 0.9;
+    font-size: 0.9rem;
+}
+
+/* ========================================
+   聯絡表單樣式 (Contact Form)
+   ======================================== */
+.contact-section {
+    /* 聯絡表單區域樣式 */
+    padding: 4rem 0;
+    /* 上下內邊距 4rem */
+    background-color: white;
+    /* 白色背景 */
+}
+
+.contact-section h3 {
+    /* 表單標題樣式 */
+    text-align: center;
+    /* 文字置中 */
+    font-size: 2rem;
+    /* 字體大小 2rem */
+    margin-bottom: 3rem;
+    /* 下邊距 3rem */
+    color: #333;
+    /* 深灰色文字 */
+}
+
+.contact-form {
+    /* 表單容器樣式 */
+    max-width: 600px;
+    /* 最大寬度 600px，限制表單寬度 */
+    margin: 0 auto;
+    /* 水平置中 */
+    background: white;
+    /* 白色背景 */
+    padding: 2rem;
+    /* 內邊距 2rem */
+    border-radius: 10px;
+    /* 圓角邊框 */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    /* 陰影效果，讓表單有浮起的感覺 */
+}
+
+.form-group {
+    /* 表單群組樣式，包含標籤和輸入欄位 */
+    margin-bottom: 1.5rem;
+    /* 下邊距 1.5rem，控制表單項目之間的間距 */
+}
+
+.form-group label {
+    /* 表單標籤樣式 */
+    display: block;
+    /* 區塊顯示，讓標籤獨佔一行 */
+    margin-bottom: 0.5rem;
+    /* 下邊距 0.5rem，與輸入欄位的間距 */
+    font-weight: 600;
+    /* 中等粗體 */
+    color: #555;
+    /* 深灰色文字 */
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    /* 表單輸入元素樣式（文字框、下拉選單、文字區域） */
+    width: 100%;
+    /* 寬度 100%，填滿容器 */
+    padding: 0.8rem;
+    /* 內邊距 0.8rem，讓輸入內容不會貼邊 */
+    border: 2px solid #ddd;
+    /* 邊框：2px 實線，淺灰色 */
+    border-radius: 5px;
+    /* 圓角邊框 */
+    font-size: 1rem;
+    /* 字體大小 1rem */
+    transition: border-color 0.3s ease;
+    /* 邊框顏色變化的過渡動畫 */
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    /* 表單元素獲得焦點時的樣式 */
+    outline: none;
+    /* 移除瀏覽器預設的焦點外框 */
+    border-color: #667eea;
+    /* 邊框顏色變為主題藍色 */
+}
+
+.submit-btn {
+    /* 提交按鈕樣式 */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    /* 漸層背景，與主題色一致 */
+    color: white;
+    /* 白色文字 */
+    padding: 1rem 2rem;
+    /* 內邊距：上下 1rem，左右 2rem */
+    border: none;
+    /* 移除邊框 */
+    border-radius: 5px;
+    /* 圓角邊框 */
+    font-size: 1rem;
+    /* 字體大小 1rem */
+    font-weight: 600;
+    /* 中等粗體 */
+    cursor: pointer;
+    /* 滑鼠指標變為手型 */
+    transition: transform 0.3s ease;
+    /* 變形效果的過渡動畫 */
+    width: 100%;
+    /* 寬度 100%，填滿容器 */
+}
+
+.submit-btn:hover:not(:disabled) {
+    /* 按鈕滑鼠懸停且未禁用時的樣式 */
+    transform: translateY(-2px);
+    /* 向上移動 2px，產生浮起效果 */
+}
+
+.submit-btn:disabled {
+    /* 按鈕禁用時的樣式 */
+    opacity: 0.6;
+    /* 透明度 60%，看起來變淡 */
+    cursor: not-allowed;
+    /* 滑鼠指標變為禁止符號 */
+    transform: none;
+    /* 不移動，保持原位置 */
+}
+
+/* 課程表樣式 */
+.schedule-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.schedule-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.table-container {
+    overflow-x: auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+.schedule-table th,
+.schedule-table td {
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.schedule-table th {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-weight: 600;
+}
+
+.schedule-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.schedule-table tr:hover {
+    background-color: #e3f2fd;
+}
+
+.time-cell {
+    background-color: #f0f0f0;
+    font-weight: 600;
+}
+
+/* 校園生活卡片 */
+.campus-life-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    color: white;
+}
+
+.campus-life-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+}
+
+.campus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.campus-card {
+    background: rgba(255,255,255,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: transform 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: translateY(-5px);
+}
+
+.campus-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.campus-card-content {
+    padding: 1.5rem;
+}
+
+.campus-card-content h4 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.campus-card-content p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+/* 學習心得區塊 */
+.learning-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.learning-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.learning-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.learning-text h4 {
+    color: #667eea;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+.learning-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.learning-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* 朋友卡片 */
+.friends-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.friends-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.friend-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.friend-card:hover {
+    transform: translateY(-5px);
+}
+
+.friend-avatar img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.friend-info h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.friend-role {
+    color: #667eea;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.friend-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.friend-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tag {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* 友誼統計 */
+.friendship-stats-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+}
+
+.friendship-stats-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* 聯絡朋友表單 */
+.contact-friends-section {
+    padding: 4rem 0;
+    background-color: white;
+}
+
+.contact-friends-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.contact-friends-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.reset-btn {
+    background: #6c757d;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: #5a6268;
+}
+
+/* 回憶時間軸 */
+.memories-section {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+}
+
+.memories-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+.memories-timeline {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+.timeline-date {
+    background: #333;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.timeline-content {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    flex: 1;
+}
+
+.timeline-content h4 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* 頁尾 */
+.footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+
+/* ========================================
+   響應式設計 (Responsive Design)
+   ======================================== */
+@media (max-width: 768px) {
+    /* 媒體查詢：當螢幕寬度小於等於 768px 時應用以下樣式 */
+    /* 768px 是平板和手機的分界點 */
+    
+    .nav-container {
+        /* 導航選單容器在手機版改為垂直排列 */
+        flex-direction: column;
+        /* 改變 Flexbox 主軸方向為垂直 */
+        gap: 1rem;
+        /* 設定間距為 1rem */
+    }
+    
+    .nav-menu {
+        /* 導航選單項目間距調整 */
+        gap: 1rem;
+        /* 減少選單項目之間的間距 */
+    }
+    
+    .hero-content {
+        /* Hero 區域在手機版改為垂直排列 */
+        flex-direction: column;
+        /* 改變 Flexbox 主軸方向為垂直 */
+        text-align: center;
+        /* 文字置中對齊 */
+    }
+    
+    .hero-text h2 {
+        /* 手機版標題字體大小調整 */
+        font-size: 2rem;
+        /* 從 2.5rem 縮小為 2rem */
+    }
+    
+    .info-grid {
+        /* 資訊卡片在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+        /* 只設定一欄，卡片會垂直堆疊 */
+    }
+    
+    .skills-grid {
+        /* 技能卡片在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+    }
+    
+    .campus-grid {
+        /* 校園生活卡片在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+    }
+    
+    .learning-content {
+        /* 學習心得區塊在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+    }
+    
+    .friends-grid {
+        /* 朋友卡片在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+    }
+    
+    .friend-card {
+        /* 朋友卡片在手機版改為垂直排列 */
+        flex-direction: column;
+        /* 改變 Flexbox 主軸方向為垂直 */
+        text-align: center;
+        /* 文字置中對齊 */
+    }
+    
+    .stats-grid {
+        /* 統計卡片在手機版改為兩欄顯示 */
+        grid-template-columns: repeat(2, 1fr);
+        /* 重複 2 次 1fr，創造兩欄等寬佈局 */
+    }
+    
+    .form-row {
+        /* 表單行在手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+    }
+    
+    .form-actions {
+        /* 表單按鈕在手機版改為垂直排列 */
+        flex-direction: column;
+    }
+    
+    .timeline-item {
+        /* 時間軸項目在手機版改為垂直排列 */
+        flex-direction: column;
+        gap: 1rem;
+        /* 設定間距為 1rem */
+    }
+    
+    .timeline-date {
+        /* 時間軸日期在手機版對齊到左側 */
+        align-self: flex-start;
+        /* 對齊到 Flexbox 容器的起始位置 */
+    }
+}
+
+@media (max-width: 480px) {
+    /* 媒體查詢：當螢幕寬度小於等於 480px 時應用以下樣式 */
+    /* 480px 是小手機的分界點 */
+    
+    .container {
+        /* 容器在小手機版減少左右內邊距 */
+        padding: 0 15px;
+        /* 從 20px 減少為 15px，節省更多空間 */
+    }
+    
+    .hero-text h2 {
+        /* 小手機版標題字體大小進一步縮小 */
+        font-size: 1.8rem;
+        /* 從 2rem 縮小為 1.8rem */
+    }
+    
+    .stats-grid {
+        /* 統計卡片在小手機版改為單欄顯示 */
+        grid-template-columns: 1fr;
+        /* 從兩欄改為單欄，避免卡片太小 */
+    }
+    
+    .nav-menu {
+        /* 導航選單在小手機版改為垂直排列 */
+        flex-direction: column;
+        /* 改變 Flexbox 主軸方向為垂直 */
+        gap: 0.5rem;
+        /* 減少選單項目之間的間距 */
+    }
+}
